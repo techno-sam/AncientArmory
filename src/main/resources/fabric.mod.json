@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "ancient_armory",
+  "version": "${version}",
+  "name": "AncientArmory",
+  "description": "",
+  "authors": [
+    "Slimeist"
+  ],
+  "contact": {
+    "repo": "https://github.com/techno-sam/AncientArmory"
+  },
+  "license": "MIT",
+  "icon": "assets/ancient_armory/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "com.slimeist.ancient_armory.AncientArmory"
+    ]
+  },
+  "mixins": [
+    "ancient_armory.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "polymer": "*",
+    "server_mobs_api": ">=1.0.3+1.19.2"
+  },
+  "recommends": {
+    "server_translations_api": "*",
+    "polypack_host": "*",
+    "polymer-autohost": "*"
+  }
+}
