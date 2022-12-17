@@ -35,7 +35,7 @@ public class AncientArmory implements DedicatedServerModInitializer {
     public static final ThorHammerItem THOR_HAMMER_ITEM = new ThorHammerItem(
             new FabricItemSettings()
                     .group(ItemGroup.COMBAT)
-                    .maxDamage(250),
+                    .maxDamage(500),
             Items.IRON_SWORD
     );
 

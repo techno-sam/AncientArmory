@@ -26,7 +26,7 @@
     "fabric": "*",
     "minecraft": "~1.19",
     "polymer": "*",
-    "server_mobs_api": ">=1.0.3+1.19.2"
+    "server_mobs_api": ">=1.0.5+1.19.2"
   },
   "recommends": {
     "server_translations_api": "*",

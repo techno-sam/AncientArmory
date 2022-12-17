@@ -61,6 +61,13 @@ public class ThorHammerEntity extends PersistentProjectileEntity implements Poly
         return new ThorHammerEntity(world, owner, stack);
     }
 
+    /**
+     * Prevents hammer from making lightning when it hits the ground
+     */
+    public void preventStrike() {
+        this.dealtDamage = true;
+    }
+
     @Override
     protected void initDataTracker() {
         super.initDataTracker();
