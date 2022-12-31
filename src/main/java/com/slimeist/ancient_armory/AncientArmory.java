@@ -1,5 +1,6 @@
 package com.slimeist.ancient_armory;
 
+import com.slimeist.ancient_armory.entities.PendulumEntity;
 import com.slimeist.ancient_armory.entities.ThorHammerEntity;
 import com.slimeist.ancient_armory.items.CustomModelItem;
 import com.slimeist.ancient_armory.items.ThorHammerItem;
@@ -41,13 +42,23 @@ public class AncientArmory implements DedicatedServerModInitializer {
 
     //ENTITIES
     public static final EntityType<ThorHammerEntity> THOR_HAMMER = Registry.register(
-            Registry.ENTITY_TYPE,
-            id("thor_hammer"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MISC, ThorHammerEntity::new).dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeChunks(8).trackedUpdateRate(20).build()
+        Registry.ENTITY_TYPE,
+        id("thor_hammer"),
+        FabricEntityTypeBuilder.create(SpawnGroup.MISC, ThorHammerEntity::new).dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeChunks(8).trackedUpdateRate(20).build()
     );
     private static final ServerEntityModelLoader THOR_HAMMER_LOADER = new ServerEntityModelLoader(THOR_HAMMER, false);
     static {
         ThorHammerEntity.setBakedModelSupplier(THOR_HAMMER_LOADER::getBakedModel);
+    }
+
+    public static final EntityType<PendulumEntity> PENDULUM = Registry.register(
+        Registry.ENTITY_TYPE,
+        id("pendulum"),
+        FabricEntityTypeBuilder.create(SpawnGroup.MISC, PendulumEntity::new).dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeChunks(8).trackedUpdateRate(20).build()
+    );
+    private static final ServerEntityModelLoader PENDULUM_LOADER = new ServerEntityModelLoader(PENDULUM, false);
+    static {
+        PendulumEntity.setBakedModelSupplier(PENDULUM_LOADER::getBakedModel);
     }
 
     private static <I extends Item & PolymerItem & CustomModelItem> void registerCustomModelItem(I item, String name) {
@@ -72,6 +83,7 @@ public class AncientArmory implements DedicatedServerModInitializer {
         }
 
         PolymerEntityUtils.registerType(THOR_HAMMER);
+        PolymerEntityUtils.registerType(PENDULUM);
     }
 
     public static Identifier id(String path) {
